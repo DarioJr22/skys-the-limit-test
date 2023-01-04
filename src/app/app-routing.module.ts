@@ -1,10 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { OpenscreenComponent } from './initialscreens/openscreen/openscreen.component';
 
 const routes: Routes = [
+//Tás tentando configurar o lazy load 
 
-    { path:'',
-      loadChildren:() => import('./initialscreens/openscreen/openscreen.module').then( m => m.OpenScreenModule),
+//https://angular.io/guide/lazy-loading-ngmodules#config-routes
+    { 
+      path:'',
+      component:OpenscreenComponent
     }
 
 ];

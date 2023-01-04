@@ -1,1 +1,108 @@
 /* You can add global styles to this file, and also import other style files */
+/* Global */
+
+body{
+    background-color: #1E1E1E;
+}
+
+
+
+
+
+
+/* Estilização de componentes */
+
+
+
+
+
+
+
+
+/* 
+.backGround-initialScreen{
+    background-image: url(./assets/images/stars.svg);
+    height: 100vh;
+    width: 100vw;
+} */
+
+/* Animações */
+
+
+/* Entrada na 1º tela */
+
+.backGround-initialScreen{
+    height: 100vh;
+    background: url(./assets/images/stars.svg) no-repeat center center fixed;
+    background-size: 75vh;
+    animation: enterScreensUpDown 1.5s ease-out;
+ }
+
+ .formatacaoLogo-initialScreen{
+    background: url(./assets/images/initial-logo.svg) no-repeat center center fixed;
+    animation: enterScreensUpDown 1.5s ease-out;    
+}
+
+/* Saída da 1º tela  */
+
+.exit-Btn{
+    height: 100vh;
+    background:linear-gradient(transparent,grey);
+    color: white;
+    opacity: 10%;
+    border: none;
+    transition: color 1.5ms ease-in-out;
+}
+
+.exit-Btn:focus{
+    height: 100vh;
+    background:linear-gradient(transparent,grey);
+    color: #1E1E1E;
+    border: none;
+    opacity: 80%;
+    
+    
+}
+
+.backGround-initialScreen-exit{
+    height: 100vh;
+    background: url(./assets/images/stars.svg) no-repeat center center fixed;
+    background-size: 75vh;
+    animation: enterScreensMidLeft 1.5s ease-out;
+ }
+
+ .formatacaoLogo-initialScreen-exit{
+    background: url(./assets/images/initial-logo.svg) no-repeat center center fixed;
+    animation: enterScreensMidLeft 1.5s ease-out;    
+}
+
+
+
+
+/* Animações - Key */
+
+@keyframes enterScreensUpDown {
+    0%{
+        transform: translateY(-100vh);
+    }
+
+    100%{
+
+        transform: translateY(0)
+    }
+}
+
+
+
+@keyframes enterScreensMidLeft {
+    0%{
+        transform: translateX(0);
+    }
+
+    100%{
+
+        transform: translateX(-100vh)
+    }
+}
+
+
