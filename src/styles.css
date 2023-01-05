@@ -33,7 +33,7 @@ body{
 
 .backGround-initialScreen{
     height: 100vh;
-    background: url(./assets/images/stars.svg) no-repeat center center fixed;
+    background: url(./assets/images/stars.svg) repeat-y center center fixed;
     background-size: 75vh;
     animation: enterScreensUpDown 1.5s ease-out;
  }
@@ -49,36 +49,94 @@ body{
     height: 100vh;
     background:linear-gradient(transparent,grey);
     color: white;
-    opacity: 10%;
+    opacity: 0%;
     border: none;
-    transition: color 1.5ms ease-in-out;
+    
 }
 
-.exit-Btn:focus{
-    height: 100vh;
-    background:linear-gradient(transparent,grey);
-    color: #1E1E1E;
-    border: none;
-    opacity: 80%;
-    
-    
-}
 
 .backGround-initialScreen-exit{
     height: 100vh;
     background: url(./assets/images/stars.svg) no-repeat center center fixed;
     background-size: 75vh;
-    animation: enterScreensMidLeft 1.5s ease-out;
+    animation: enterScreensMidLeft 0.7s ease-in-out;
+    animation-fill-mode: forwards;
  }
 
  .formatacaoLogo-initialScreen-exit{
     background: url(./assets/images/initial-logo.svg) no-repeat center center fixed;
-    animation: enterScreensMidLeft 1.5s ease-out;    
+    animation: enterScreensMidLeft 0.7s ease-in-out;
+    animation-fill-mode: forwards;    
 }
 
+/* Entrada na 2º tela */
+
+.slogans-secondScreen{
+    animation:appearElement 2.5s ease-in-out;
+    animation-fill-mode: forwards;
+ }
+
+ .logoFormatting-secondScreen{
+    width: 53.72px;
+    height: 25.28px;
+    animation:appearElement 1.75s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+/* Tela de Login */
 
 
+.img-formatting{
+    width: 100vh;
+}
 
+button{
+    background-color:#7631F0 !important
+}
+
+button.active{
+    background-color:#ffffff !important
+}
+
+.button-signup{  
+    color: #ffffff !important;
+    width: 323px !important;
+    height: 74px !important;
+    background-color: #1E1E1E !important;
+    border-style: solid;
+    border-color: #ffffff !important;
+    border-radius: 50px !important;
+}
+
+.button-signup:hover{  
+    color: #ffffff !important;
+    width: 323px !important;
+    height: 74px !important;
+    background-color: #333333 !important;
+    border-style: solid;
+    border-color: #ffffff !important;
+    border-radius: 50px !important;
+}
+
+.button-login{  
+    color: #ffffff !important;
+    width: 323px !important;
+    height: 74px !important;
+    background-color: #1E1E1E !important;
+    border-style: none;
+    border-color:transparent!important;
+    border-radius: 50px !important;
+}
+
+.button-login:hover{  
+    color: #ffffff !important;
+    width: 323px !important;
+    height: 74px !important;
+    background-color: #333333 !important;
+    border-style: none;
+    border-color:transparent!important;
+    border-radius: 50px !important;
+}
 /* Animações - Key */
 
 @keyframes enterScreensUpDown {
@@ -95,9 +153,6 @@ body{
 
 
 @keyframes enterScreensMidLeft {
-    0%{
-        transform: translateX(0);
-    }
 
     100%{
 
@@ -105,4 +160,15 @@ body{
     }
 }
 
+@keyframes appearElement {
+    0%{
+        opacity: 0%;
+        transform: translateY(-100px);
+    }
 
+
+    100%{
+        opacity: 100%;
+        transform: translateX(0)
+    }
+}

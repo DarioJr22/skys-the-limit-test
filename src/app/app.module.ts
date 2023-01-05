@@ -4,15 +4,18 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbCarouselModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
 import { OpenscreenComponent } from './initialscreens/openscreen/openscreen.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   
   declarations: [
     AppComponent,
-    OpenscreenComponent
+    OpenscreenComponent,
+    LoginComponent
+
   ],
   
   imports: [
@@ -20,7 +23,9 @@ import { OpenscreenComponent } from './initialscreens/openscreen/openscreen.comp
     AppRoutingModule,
     FormsModule,
     NgbModule,
-    CommonModule
+    CommonModule,
+    NgbModule,
+    NgbCarouselModule
   ],
   
   exports:[AppComponent,          

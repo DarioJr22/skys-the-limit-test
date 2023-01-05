@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-openscreen',
@@ -10,14 +11,26 @@ export class OpenscreenComponent {
   variavelClasseTransicaoBg:string = ''
   variavelClasseInicialElm:string = 'd-flex justify-content-center w-100 formatacaoLogo-initialScreen'
 variavelClasseTransicaoElm:string = '' */
-InicialBg:boolean = false
-InicialElm:boolean = true
+secondElm:boolean = false
+InicialElm:boolean = false
+
+
+/*  */
+constructor(private router:Router){}
+
 
 //Transição de saída dessa tela e fazer entrada da próxima nesse mesmo componente de preferência
 //Falar com o cliente  3-1 |9# 8#8 -58-- 0177
 
   
-  teste(){
+  telasIniciais_Passagem(){
+    this.InicialElm = true
+        setTimeout(() => {
+            this.secondElm = true
+          }, 800);
 
+        setTimeout(()=>{
+          this.router.navigate(['/login'])
+        }, 5000)
   }
 }
