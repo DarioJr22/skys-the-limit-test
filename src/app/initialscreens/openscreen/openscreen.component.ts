@@ -7,20 +7,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./openscreen.component.css']
 })
 export class OpenscreenComponent {
-  /* variavelClasseInicialBg:string = 'd-flex justify-content-center backGround-initialScreen'
-  variavelClasseTransicaoBg:string = ''
-  variavelClasseInicialElm:string = 'd-flex justify-content-center w-100 formatacaoLogo-initialScreen'
-variavelClasseTransicaoElm:string = '' */
+
 secondElm:boolean = false
 InicialElm:boolean = false
+continue:boolean = true
 
 
 /*  */
 constructor(private router:Router){}
 
-
-//Transição de saída dessa tela e fazer entrada da próxima nesse mesmo componente de preferência
-//Falar com o cliente  3-1 |9# 8#8 -58-- 0177
 
   
   telasIniciais_Passagem(){

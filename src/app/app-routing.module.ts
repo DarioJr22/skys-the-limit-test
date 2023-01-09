@@ -1,7 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+/* import { AuthGuardComponent } from './auth/auth-guard.component'; */
+import { AuthGuardService } from './auth/auth-guard.service';
 import { OpenscreenComponent } from './initialscreens/openscreen/openscreen.component';
 import { LoginComponent } from './login/login.component';
+import { PreferencesSignupComponent } from './preferences-signup/preferences-signup.component';
+import { SignupComponent } from './signup/signup.component';
 
 const routes: Routes = [
 //Tás tentando configurar o lazy load 
@@ -16,13 +20,22 @@ const routes: Routes = [
       component:LoginComponent
     },
     { 
-      path:'register',
-      component:OpenscreenComponent
+      path:'signup',
+      component:SignupComponent
     },
     { 
       path:'preferences',
-      component:OpenscreenComponent
+      component:PreferencesSignupComponent,
+      canActivate:[AuthGuardService]
+    },
+    {path:'**', 
+    component:OpenscreenComponent
     }
+ /*    { 
+      path:'notAuth',
+      component:AuthGuardComponent
+    } */
+
 
 
 

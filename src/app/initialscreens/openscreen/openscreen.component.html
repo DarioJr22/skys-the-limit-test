@@ -1,13 +1,21 @@
 <div id="wrapper" *ngIf="!secondElm" [ngClass]="{'d-flex justify-content-center backGround-initialScreen':!InicialElm,
                               'd-flex justify-content-center backGround-initialScreen-exit':InicialElm}">
+                              
 
   <div [ngClass]="{'d-flex justify-content-end w-100 formatacaoLogo-initialScreen':!InicialElm,
                          'd-flex justify-content-end w-100 formatacaoLogo-initialScreen-exit':InicialElm}">
+  
 
     <a class="d-flex justify-content-end exit-Btn" (click)="telasIniciais_Passagem()">></a>
-
+  
   </div>
+
+  <span (click)="telasIniciais_Passagem()" [ngClass]="{'d-flex justify-content-center w-100 formatacao-Continue':continue}">
+    Click to continue
+  </span>
 </div>
+
+
 
 <div class="d-flex justify-content-center" *ngIf="secondElm">
   <div class="d-flex justify-content-center flex-column">

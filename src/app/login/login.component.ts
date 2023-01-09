@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgbCarousel, NgbCarouselModule, NgbSlideEvent, NgbSlideEventSource } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -7,9 +7,11 @@ import { NgbCarousel, NgbCarouselModule, NgbSlideEvent, NgbSlideEventSource } fr
   
 
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit{
 
-  images = [1,2,3].map((n) => `./assets/images/carroussel-${n}.svg`);
+	carregando:boolean = true 
+
+  	images = [1,2,3].map((n) => `./assets/images/carroussel-${n}.svg`);
 
 	paused = false;
 	unpauseOnArrow = false;
@@ -17,7 +19,18 @@ export class LoginComponent {
 	pauseOnHover = true;
 	pauseOnFocus = true;
 
+
+
 	@ViewChild('carousel', { static: true })carousel!: NgbCarousel;
+
+	constructor(){
+	}
+
+	ngOnInit(): void {
+		setTimeout(() => {
+			this.carregando =false
+		}, 3000);
+	}
 
 	togglePaused() {
 		if (this.paused) {

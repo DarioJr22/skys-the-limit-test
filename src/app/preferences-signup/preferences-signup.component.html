@@ -1,0 +1,83 @@
+<div class="d-flex justify-content-center flex-column" >
+
+    <div class="d-flex flex-row justify-content-center mb-2">
+
+        <img class='d-flex mb-5' src="./assets/images/logo.svg">
+
+    </div>
+
+    <div class="d-flex flex-row justify-content-center align-items-center  mb-2">
+        <img #previous id="previous"(click)="mudarCorElementsPrevious(previous.id)" class="align-items-center  mr-1 " src="./../../assets/images/setinha-ParaTrás.svg">
+        <button  #btnCaroussel1 id="btnCaroussel1" (click)="mudarCorElements(btnCaroussel1.id)" [ngClass]="{'button-off':!botaoAtivado1,'button-on':botaoAtivado1}"></button>
+        <button #btnCaroussel2 id="btnCaroussel2" (click)="mudarCorElements(btnCaroussel2.id)" [ngClass]="{'button-off':!botaoAtivado2,'button-on':botaoAtivado2}" ></button>
+        <button #btnCaroussel3 id="btnCaroussel3" (click)="mudarCorElements(btnCaroussel3.id)" [ngClass]="{'button-off':!botaoAtivado3,'button-on':botaoAtivado3}"></button>
+        <button #btnCaroussel4 id="btnCaroussel4" (click)="mudarCorElements(btnCaroussel4.id)" [ngClass]="{'button-off':!botaoAtivado4,'button-on':botaoAtivado4}"></button>
+        <button #btnCaroussel5 id="btnCaroussel5" (click)="mudarCorElements(btnCaroussel5.id)" [ngClass]="{'button-off':!botaoAtivado5,'button-on':botaoAtivado5}"></button>
+        <button #btnCaroussel6 id="btnCaroussel6" (click)="mudarCorElements(btnCaroussel6.id)" [ngClass]="{'button-off':!botaoAtivado6,'button-on':botaoAtivado6}"></button>
+        <button #btnCaroussel7 id="btnCaroussel7" (click)="mudarCorElements(btnCaroussel7.id)" [ngClass]="{'button-off':!botaoAtivado7,'button-on':botaoAtivado7}"></button>
+        <button #btnCaroussel8 id="btnCaroussel8" (click)="mudarCorElements(btnCaroussel8.id)" [ngClass]="{'button-off':!botaoAtivado8,'button-on':botaoAtivado8}"></button>
+        <p #skip id="skip" (click)="mudarCorElements(skip.id)" style="color: white; font-size: smaller;margin-top: 3px;">Skip</p>
+
+    </div>
+
+    <div class="d-flex flex-row justify-content-center mb-2">
+
+        <img class='d-flex mb-5' src="./assets/images/learn-aboutBussines.svg">
+
+    </div>
+
+    
+
+<div class="d-flex justify-content-center flex-column estilizacao-preferences mb-3">
+    <ul  *ngFor="let i of learnaboutBussiness;index as y;">
+        
+        <li class="row">
+            <div class="d-flex justify-content-center mt-2">
+
+                <input type="checkbox" class="btn-check" [id]="'btn-check-'+y" [checked]="false" autocomplete="off">
+                <label class="btn btn-primary d-flex align-items-center justify-content-center button-preferences m-1" [for]="'btn-check-'+y">{{learnaboutBussiness[y]}}</label>
+    
+                <input type="checkbox" class="btn-check" [id]="'btn-check-'+y+3" [checked]="false" autocomplete="off">
+                <label class="btn btn-primary d-flex align-items-center justify-content-center button-preferences m-1" [for]="'btn-check-'+y+3">{{!learnaboutBussiness[y+3] ? learnaboutBussiness[y-6] : learnaboutBussiness[y+3]}}</label>
+
+            </div>
+           
+        </li>
+            
+    </ul>
+</div>
+
+    
+    <div class="d-flex flex-row justify-content-center mb-3">
+
+    <div class="d-flex justify-content-center flex-column">
+
+        <div class="d-flex justify-content-center flex-row  mb-1">
+            <button class="button-signup" (click)="modalFinalizacao(content)">Next</button>
+        </div>
+
+
+        
+        
+    </div>
+    </div>
+
+    
+</div>
+
+
+<ng-template #content let-modal>
+    <div class="modal-body ">
+        <ngb-alert type="success"  [dismissible]="false">
+            <strong>Obrigado !</strong> Você finalizou o teste !
+            <strong><a href="https://api.whatsapp.com/send?phone=5581983405070">Clique aqui</a> para me enviar um feedback !</strong>
+        </ngb-alert>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-light" (click)="modal.close('Close click')">OK</button>
+    </div>
+</ng-template>
+
+
+
